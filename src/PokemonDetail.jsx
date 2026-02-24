@@ -7,7 +7,7 @@ function PokemonDetail() {
   const navigate = useNavigate();
   const { darkMode } = useContext(ThemeContext);
 
-  const [pokemon, setPokemon] = useState(null);
+  const [pokemon, setPokemon] = useState(null);//to store fetched data
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
@@ -56,8 +56,8 @@ function PokemonDetail() {
         style={{ width: "150px" }}
       />
 
-      <p>Height: {pokemon.height}</p>
-      <p>Weight: {pokemon.weight}</p>
+      <p>Height "Feet": {pokemon.height}</p>
+      <p>Weight "KG": {pokemon.weight}</p>
 
       <h3>Types</h3>
       {pokemon.types.map((t) => (
@@ -72,7 +72,7 @@ function PokemonDetail() {
         >
           {t.type.name}
         </span>
-      ))}
+      ))} 
     </div>
   );
 }
